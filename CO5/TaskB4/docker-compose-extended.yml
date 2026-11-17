@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  portal:
+    image: simats/result-portal:1.0
+    ports:
+      - "8000:8000"
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 1024M
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+
+  lms-exam-service:
+    image: simats/lms-exam-service:1.0
+    ports:
+      - "8080:8080"
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 1024M
+        reservations:
+          cpus: '0.5'
+          memory: 512M
